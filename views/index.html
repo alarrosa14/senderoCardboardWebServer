@@ -24,13 +24,8 @@
 
   <script src="underscore-min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
-  <!-- <script src="three.min.js"></script> -->
   <script src="three.js"></script>
-  
-  <script src="http://threejs.org/examples/js/loaders/OBJLoader.js"></script>
-  <!--<script src="http://threejs.org/examples/js/controls/OrbitControls.js"></script> -->
-  <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
-
+  <script src="OBJLoader.js"></script>
   <script src="OrbitControls.js"></script>
   <script src="StereoEffect.js"></script>
   <script src="DeviceOrientationControls.js"></script>
@@ -39,7 +34,7 @@
     var camera, scene, renderer, play;
     var effect, controls;
     var element, container;
-    var server = io.connect('http://alarrosa14.ddns.net:8080');
+    var server = io.connect('192.168.0.106:8080');
 
     var clock = new THREE.Clock();
 
@@ -80,7 +75,7 @@
     function init() {
       renderer = new THREE.WebGLRenderer({antialias: true, sortObjects: false, alpha: true});
       renderer.sortObjects = false;
-      renderer.setClearColor( 0x212121 , 1);
+      renderer.setClearColor( 0x070707 , 1);
       element = renderer.domElement;
       container = document.getElementById('example');
       container.appendChild(element);

@@ -7,9 +7,8 @@ var path = require('path');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-require('socket.io-stream')(io);
-
-io.on('connection', function(client){
+//require('socket.io-stream')(io);
+/*io.on('connection', function(client){
   console.log("Connected client...");
   client.on('sendFrame', function(data){
     client.broadcast.emit('frame', data);
@@ -17,12 +16,16 @@ io.on('connection', function(client){
   client.on('log', function(msj){
   	console.log(msj);
   });
-});
+});*/
 
 app.get('/', function(req, res){
-  console.log("GETTING!");
-  res.sendFile(__dirname + '/views/index.html');
+  	console.log("New client...");
+  	res.sendFile(__dirname + '/views/index.html');
 });
 
 server.listen(8080);
-console.log("listening in 8080...");
+
+console.log("");
+console.log("***********************************************************");
+console.log("*** senderoCardboardWebServer listening on port 8080... ***");
+console.log("***********************************************************");
